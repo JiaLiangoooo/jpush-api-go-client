@@ -8,22 +8,22 @@ type Option struct {
 	BigPushDuration int   `json:"big_push_duration,omitempty"`
 }
 
-func (this *Option) SetSendno(no int) {
-	this.SendNo = no
+func (op *Option) SetSendno(no int) {
+	op.SendNo = no
 }
 
-func (this *Option) SetTimelive(timelive int) {
-	this.TimeLive = timelive
+func (op *Option) SetTimelive(timelive int) {
+	op.TimeLive = timelive
 }
 
-func (this *Option) SetOverrideMsgId(id int64) {
-	this.OverrideMsgId = id
+func (op *Option) SetOverrideMsgId(id int64) {
+	op.OverrideMsgId = id
 }
 
-func (this *Option) SetApns(apns bool) {
-	this.ApnsProduction = apns
+func (op *Option) SetApns(apns bool) {
+	op.ApnsProduction = apns
 }
 
-func (this *Option) SetBigPushDuration(bigPushDuration int) {
-	this.BigPushDuration = bigPushDuration
+func (op *Option) SetBigPushDuration(bigPushDuration int) {
+	op.BigPushDuration = bigPushDuration
 }

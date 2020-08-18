@@ -12,35 +12,35 @@ type Audience struct {
 	audience map[string][]string
 }
 
-func (this *Audience) All() {
-	this.Object = "all"
+func (aud *Audience) All() {
+	aud.Object = "all"
 }
 
-func (this *Audience) SetID(ids []string) {
-	this.set(ID, ids)
+func (aud *Audience) SetID(ids []string) {
+	aud.set(ID, ids)
 }
 
-func (this *Audience) SetTag(tags []string) {
-	this.set(TAG, tags)
+func (aud *Audience) SetTag(tags []string) {
+	aud.set(TAG, tags)
 }
 
-func (this *Audience) SetTagAnd(tags []string) {
-	this.set(TAG_AND, tags)
+func (aud *Audience) SetTagAnd(tags []string) {
+	aud.set(TAG_AND, tags)
 }
 
-func (this *Audience) SetAlias(alias []string) {
-	this.set(ALIAS, alias)
+func (aud *Audience) SetAlias(alias []string) {
+	aud.set(ALIAS, alias)
 }
 
-func (this *Audience) set(key string, v []string) {
-	if this.audience == nil {
-		this.audience = make(map[string][]string)
-		this.Object = this.audience
+func (aud *Audience) set(key string, v []string) {
+	if aud.audience == nil {
+		aud.audience = make(map[string][]string)
+		aud.Object = aud.audience
 	}
 
-	//v, ok = this.audience[key]
+	//v, ok = aud.audience[key]
 	//if ok {
 	//	return
 	//}
-	this.audience[key] = v
+	aud.audience[key] = v
 }

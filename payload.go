@@ -20,28 +20,28 @@ func NewPushPayLoad() *PayLoad {
 	return pl
 }
 
-func (this *PayLoad) SetPlatform(pf *Platform) {
-	this.Platform = pf.Os
+func (pl *PayLoad) SetPlatform(pf *Platform) {
+	pl.Platform = pf.Os
 }
 
-func (this *PayLoad) SetAudience(ad *Audience) {
-	this.Audience = ad.Object
+func (pl *PayLoad) SetAudience(ad *Audience) {
+	pl.Audience = ad.Object
 }
 
-func (this *PayLoad) SetOptions(o *Option) {
-	this.Options = o
+func (pl *PayLoad) SetOptions(o *Option) {
+	pl.Options = o
 }
 
-func (this *PayLoad) SetMessage(m *Message) {
-	this.Message = m
+func (pl *PayLoad) SetMessage(m *Message) {
+	pl.Message = m
 }
 
-func (this *PayLoad) SetNotice(notice *Notice) {
-	this.Notification = notice
+func (pl *PayLoad) SetNotice(notice *Notice) {
+	pl.Notification = notice
 }
 
-func (this *PayLoad) ToBytes() ([]byte, error) {
-	content, err := json.Marshal(this)
+func (pl *PayLoad) ToBytes() ([]byte, error) {
+	content, err := json.Marshal(pl)
 	if err != nil {
 		return nil, err
 	}

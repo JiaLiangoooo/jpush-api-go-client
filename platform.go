@@ -15,15 +15,15 @@ type Platform struct {
 	osArry []string
 }
 
-func (this *Platform) All() {
-	this.Os = "all"
+func (pf *Platform) All() {
+	pf.Os = "all"
 }
 
-func (this *Platform) Add(os string) error {
-	if this.Os == nil {
-		this.osArry = make([]string, 0, 3)
+func (pf *Platform) Add(os string) error {
+	if pf.Os == nil {
+		pf.osArry = make([]string, 0, 3)
 	} else {
-		switch this.Os.(type) {
+		switch pf.Os.(type) {
 		case string:
 			return errors.New("platform is all")
 		default:
@@ -31,7 +31,7 @@ func (this *Platform) Add(os string) error {
 	}
 
 	//判断是否重复
-	for _, value := range this.osArry {
+	for _, value := range pf.osArry {
 		if os == value {
 			return nil
 		}
@@ -43,23 +43,23 @@ func (this *Platform) Add(os string) error {
 	case ANDROID:
 		fallthrough
 	case WINPHONE:
-		this.osArry = append(this.osArry, os)
-		this.Os = this.osArry
+		pf.osArry = append(pf.osArry, os)
+		pf.Os = pf.osArry
 	default:
-		return errors.New("unknow platform")
+		return errors.New("unknown platform")
 	}
 
 	return nil
 }
 
-func (this *Platform) AddIOS() {
-	this.Add(IOS)
+func (pf *Platform) AddIOS() {
+	pf.Add(IOS)
 }
 
-func (this *Platform) AddAndrid() {
-	this.Add(ANDROID)
+func (pf *Platform) AddAndroid() {
+	pf.Add(ANDROID)
 }
 
-func (this *Platform) AddWinphone() {
-	this.Add(WINPHONE)
+func (pf *Platform) AddWinphone() {
+	pf.Add(WINPHONE)
 }

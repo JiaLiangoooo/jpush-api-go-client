@@ -7,22 +7,22 @@ type Message struct {
 	Extras      map[string]interface{} `json:"extras,omitempty"`
 }
 
-func (this *Message) SetContent(c string) {
-	this.Content = c
+func (msg *Message) SetContent(c string) {
+	msg.Content = c
 
 }
 
-func (this *Message) SetTitle(title string) {
-	this.Title = title
+func (msg *Message) SetTitle(title string) {
+	msg.Title = title
 }
 
-func (this *Message) SetContentType(t string) {
-	this.ContentType = t
+func (msg *Message) SetContentType(t string) {
+	msg.ContentType = t
 }
 
-func (this *Message) AddExtras(key string, value interface{}) {
-	if this.Extras == nil {
-		this.Extras = make(map[string]interface{})
+func (msg *Message) AddExtras(key string, value interface{}) {
+	if msg.Extras == nil {
+		msg.Extras = make(map[string]interface{})
 	}
-	this.Extras[key] = value
+	msg.Extras[key] = value
 }
